@@ -1,0 +1,3 @@
+Anna;23;Warszawa
+Piotr;17;Krakow
+Zofia;30;Gdansk
