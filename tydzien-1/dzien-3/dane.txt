@@ -1,0 +1,3 @@
+Kowalski,180,75
+
+Nowak,165,60
