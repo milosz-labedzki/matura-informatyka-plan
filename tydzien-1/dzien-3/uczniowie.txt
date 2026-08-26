@@ -1,5 +1,0 @@
-Kowalski Jan,15,5.0
-Nowak Anna,16,4.5
-Wiśniewski Piotr,15,3.0
-
-Zielińska Ola,17,4.0
