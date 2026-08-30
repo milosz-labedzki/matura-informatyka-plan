@@ -5,4 +5,4 @@
 - [x] **Dzień 9:** Wyszukiwanie binarne w ciągu danych
 - [x] **Dzień 10:** Algorytmy sortowania z *Grokking Algorithms*
 - [x] **Dzień 11:** Palindromy, anagramy i podciągi w plikach
-- [ ] **Dzień 12:** Utrwalenie: Kompleksowe zadanie z Pythona z arkusza CKE
+- [x] **Dzień 12:** Utrwalenie: Kompleksowe zadanie z Pythona z arkusza CKE
