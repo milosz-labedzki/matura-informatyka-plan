@@ -4,5 +4,5 @@
 - [x] **Dzień 14:** Formuły logiczne (`JEŻELI`, `ORAZ`, `LUB`)
 - [x] **Dzień 15:** Zliczanie warunkowe (`LICZ.JEŻELI`, `SUMA.JEŻELI`)
 - [x] **Dzień 16:** Tabele Przestawne (Pivot Tables) – Podstawy i agregacja
-- [ ] **Dzień 17:** Tabele Przestawne – Zaawansowana analiza i filtrowanie
+- [x] **Dzień 17:** Tabele Przestawne – Zaawansowana analiza i filtrowanie
 - [ ] **Dzień 18:** Tworzenie i formatowanie wykresów CKE
