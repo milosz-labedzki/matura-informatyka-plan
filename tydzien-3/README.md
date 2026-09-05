@@ -5,4 +5,4 @@
 - [x] **Dzień 15:** Zliczanie warunkowe (`LICZ.JEŻELI`, `SUMA.JEŻELI`)
 - [x] **Dzień 16:** Tabele Przestawne (Pivot Tables) – Podstawy i agregacja
 - [x] **Dzień 17:** Tabele Przestawne – Zaawansowana analiza i filtrowanie
-- [ ] **Dzień 18:** Tworzenie i formatowanie wykresów CKE
+- [x] **Dzień 18:** Tworzenie i formatowanie wykresów CKE
