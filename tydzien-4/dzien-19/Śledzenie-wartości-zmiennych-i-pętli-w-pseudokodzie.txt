@@ -1,0 +1,20 @@
+zmienna: suma, iloczyn
+suma ← 0
+iloczyn ← 1
+dla i ← 1 do 3 wykonuj
+    dla j ← 1 do i wykonuj
+        suma ← suma + j
+    koniec dla
+    iloczyn ← iloczyn * suma
+koniec dla
+wypisz suma
+wypisz iloczyn
+
+
+
+i=1, j=1, suma=1, iloczyn=1
+i=2, j=1, suma=2, j=2, suma=4 iloczyn=4
+i=3, j=1, suma=5, j=2, suma=7, j=3, suma=10, iloczyn=40
+
+suma: 10
+iloczyn: 40
