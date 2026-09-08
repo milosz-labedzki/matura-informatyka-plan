@@ -1,0 +1,12 @@
+funkcja fib(n):
+    jeśli n <= 1:
+        zwróć n
+    wpp:
+        zwróć fib(n-1) + fib(n-2)
+
+
+wywołanie	wyrażenie		wartość zwrócona
+fib(0)		zwróć n (bo 0≤1)		0
+fib(1)		zwróć n (bo 1≤1)		1
+fib(2)		fib(1) + fib(0) = 1 + 0		1
+fib(3)		fib(2) + fib(1) = 1 + 1		2
