@@ -1,0 +1,4 @@
+Przy zamianie jakiejs liczby na inny system liczbowy zamieniasz na bianrny i z niego na:
+0x(szesnatskowy) : dzielisz po 4 bity
+0(osemkowy) : dzielisz po 3 bity
+10 (dziesietny) : podpisujesz potegi liczby 2 do bitow i dodajesz 
