@@ -1,0 +1,35 @@
+# Notatka: jak radzić sobie, gdy jeden składnik "pasuje" do dwóch innych
+
+Sytuacja: masz `A'B + AB + AB'` (gdzie `A'` = NOT A, `B'` = NOT B).
+
+Ten środkowy `AB` jest jak most — pasuje i do lewego (bo mają wspólne B),
+i do prawego (bo mają wspólne A).
+
+**Problem:** jest tylko jeden `AB`, a potrzebujesz go w dwóch miejscach.
+
+**Rozwiązanie:** dopisz go jeszcze raz. Wolno tak, bo `X+X=X`
+(coś dodane do samego siebie nie zmienia wartości — 0+0=0, 1+1=1).
+
+    A'B + AB + AB'  =  A'B + AB + AB + AB'
+
+**Teraz masz dwie normalne pary:**
+
+- Para 1: `A'B + AB` → wyciągasz B przed nawias → `B(A'+A)`
+- Para 2: `AB + AB'` → wyciągasz A przed nawias → `A(B+B')`
+
+**A to co w nawiasach zawsze daje 1**
+(zmienna albo jej zaprzeczenie — jedno z nich zawsze prawda):
+
+    B*1 + A*1  =  A + B
+
+**Uważaj:** `+` to OR, nie zwykłe dodawanie. `1 + 1 = 1`, a nie 2.
+
+**Zawsze sprawdzaj tabelką prawdy** (4 wiersze na A i B) — czy wyjściowe
+wyrażenie i wynik dają to samo.
+
+| A | B | A'B | AB | AB' | Y (suma) | A+B |
+|---|---|-----|----|----|----------|-----|
+| 0 | 0 | 0   | 0  | 0  | 0        | 0   |
+| 0 | 1 | 1   | 0  | 0  | 1        | 1   |
+| 1 | 0 | 0   | 0  | 1  | 1        | 1   |
+| 1 | 1 | 0   | 1  | 0  | 1        | 1   |
