@@ -1,8 +1,8 @@
 wygląd drzewa:
 
-50 → 30 (lewe) 
-50 → 70 (prawe) 
-30 → 20 (lewe) 
+50 → 30 (lewe)
+50 → 70 (prawe)
+30 → 20 (lewe)
 30 → 40 (prawe)
 70 → 60 (lewe)
 70 → 90 (prawe)
@@ -25,8 +25,9 @@ Jak robić sortowanie (orders) — najprostszy sposób:
 
 Podziel drzewo na 3 części: korzeń, cała lewa gałąź (30 z dziećmi 20,40), cała prawa gałąź (70 z dziećmi 60,90). Potem tylko układasz te 3 części w innej kolejności, zależnie co robisz:
 
-pre-order (korzeń najpierw): korzeń → lewa gałąź → prawa gałąź → 50, 30, 20, 40, 70, 60, 90
-in-order (korzeń w środku): lewa gałąź → korzeń → prawa gałąź → 20, 30, 40, 50, 60, 70, 90
-post-order (korzeń na końcu): lewa gałąź → prawa gałąź → korzeń → 20, 40, 30, 60, 90, 70, 50
+- pre-order (korzeń najpierw): korzeń → lewa gałąź → prawa gałąź → 50, 30, 20, 40, 70, 60, 90
+- in-order (korzeń w środku): lewa gałąź → korzeń → prawa gałąź → 20, 30, 40, 50, 60, 70, 90
+- post-order (korzeń na końcu): lewa gałąź → prawa gałąź → korzeń → 20, 40, 30, 60, 90, 70, 50
+
 
 *nie wolno wstawić elementu z prawej gałęzi, dopóki cała lewa gałąź się nie skończy — nawet jeśli lewa gałąź ma swoje własne dzieci.*
