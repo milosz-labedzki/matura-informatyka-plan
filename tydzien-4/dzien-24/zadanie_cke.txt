@@ -1,0 +1,28 @@
+suma ← 0
+dla i ← 1 do n:
+    suma ← suma + i
+
+dla i ← 1 do n:
+    dla j ← 1 do n:
+        suma ← suma + i*j
+
+wypisz suma
+
+n = 4 uzupełnij:
+
+Element								      Wynik
+Liczba wykonań instrukcji w pierwszej pętli (suma ← suma + i)		?
+Liczba wykonań instrukcji w zagnieżdżonej pętli (suma ← suma + i*j)	?
+Suma wszystkich wykonań instrukcji (obie pętle razem)			?
+
+Następnie:
+4. Wzór ogólny na łączną liczbę wykonań: f(n) = ?
+5. Klasa złożoności całego algorytmu: O(?)
+
+
+
+1. 4
+2. 4*4=16
+3. 20
+4. f(n) = n + n^2
+5. O(n^2)
