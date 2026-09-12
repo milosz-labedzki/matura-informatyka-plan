@@ -5,4 +5,4 @@
 - [x] **Dzień 21:** Ręczne przeliczanie systemów (BIN, OCT, DEC, HEX)
 - [x] **Dzień 22:** Algebra Boole'a i upraszczanie wyrażeń logicznych
 - [x] **Dzień 23:** Podstawy grafów i drzewa binarne
-- [ ] **Dzień 24:** Szacowanie złożoności obliczeniowej $O(n)$
+- [x] **Dzień 24:** Szacowanie złożoności obliczeniowej $O(n)$
