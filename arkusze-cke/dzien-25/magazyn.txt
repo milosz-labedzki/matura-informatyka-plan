@@ -1,0 +1,6 @@
+Jabłko;10;2.50
+Chleb;5;4.20
+Mleko;8;3.10
+Jabłko;3;2.50
+Chleb;2;4.20
+Masło;6;7.00
