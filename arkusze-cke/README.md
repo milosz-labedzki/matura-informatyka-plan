@@ -1,6 +1,6 @@
 # 📁 Trening na Arkuszach CKE (Tydzień 5)
 
-- [ ] **Dzień 25:** CKE – Zadanie z Pythona (Część II)
+- [x] **Dzień 25:** CKE – Zadanie z Pythona (Część II)
 - [ ] **Dzień 26:** CKE – Zadanie z Excela (Część II)
 - [ ] **Dzień 27:** CKE – Zadanie z Baz Danych / SQL (Część II)
 - [ ] **Dzień 28:** CKE – Zadania na kartce (Część I)
