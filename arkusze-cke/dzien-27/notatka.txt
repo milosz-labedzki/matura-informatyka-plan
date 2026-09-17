@@ -1,0 +1,105 @@
+# SQL Część II — notatka
+
+## 1. JOIN trzech tabel
+
+Żeby połączyć 3 tabele, piszesz **dwa osobne bloki** `JOIN ... ON ...` — nie łączysz ich słowem `AND` i nie mieszasz z przecinkami.
+
+```sql
+SELECT imie, nazwa, ocena
+FROM Oceny
+JOIN Uczniowie ON Oceny.id_ucznia = Uczniowie.id_ucznia
+JOIN Przedmioty ON Oceny.id_przedmiotu = Przedmioty.id_przedmiotu
+WHERE klasa = '3A';
+```
+
+**Zasada:** każda kolejna tabela = osobny `JOIN ... ON`. Warunek w `ON` to zawsze klucz łączący dwie tabele (np. `id_ucznia` w obu tabelach).
+
+---
+
+## 2. NOT EXISTS — sprawdzanie "kto nie ma"
+
+Używamy, gdy chcemy znaleźć rekordy, dla których **nie istnieje** żaden pasujący wiersz w innej tabeli.
+
+```sql
+SELECT imie
+FROM Uczniowie
+WHERE NOT EXISTS (
+    SELECT id_ucznia FROM Oceny
+    WHERE Uczniowie.id_ucznia = Oceny.id_ucznia
+);
+```
+
+**Jak to czytać:** "weź ucznia, dla którego **nie istnieje** żaden wiersz w Oceny, gdzie id_ucznia się zgadza".
+To jest podzapytanie **skorelowane** — bo odwołuje się do tabeli z zapytania na zewnątrz (`Uczniowie.id_ucznia`).
+
+**Pułapka:** `EXISTS`, nie `EXIST` (liczba mnoga!).
+
+---
+
+## 3. CASE WHEN — kategoryzacja wartości
+
+Dodaje nową kolumnę tekstową na podstawie warunków.
+
+```sql
+SELECT ocena,
+    CASE
+        WHEN ocena IN (5,6) THEN 'Bardzo dobry'
+        WHEN ocena IN (3,4) THEN 'Średni'
+        ELSE 'Słaby'
+    END AS kategoria
+FROM Oceny;
+```
+
+**Zasady:**
+- `CASE` sprawdza warunki **po kolei, od góry** — pierwszy pasujący `WHEN` wygrywa.
+- `IN (5,6)` to skrót zamiast `ocena = 5 OR ocena = 6`.
+- `ELSE` to "wszystko inne, co nie pasowało wcześniej".
+- Nie zapomnij o **przecinku** przed `CASE` — to kolejna kolumna w `SELECT`.
+
+---
+
+## 4. LEFT JOIN + CASE WHEN + obsługa NULL (najważniejsze połączenie)
+
+Gdy chcemy zachować **wszystkie** rekordy z jednej tabeli, nawet jeśli nie mają dopasowania w drugiej — używamy `LEFT JOIN`.
+
+```sql
+SELECT imie, nazwa, ocena,
+    CASE
+        WHEN ocena IN (5,6) THEN 'Bardzo dobry'
+        WHEN ocena IN (3,4) THEN 'Średni'
+        WHEN ocena IN (1,2) THEN 'Słaby'
+        ELSE NULL
+    END AS kategoria
+FROM Uczniowie
+LEFT JOIN Oceny ON Oceny.id_ucznia = Uczniowie.id_ucznia
+LEFT JOIN Przedmioty ON Oceny.id_przedmiotu = Przedmioty.id_przedmiotu
+WHERE klasa = '3A';
+```
+
+**Kluczowe zasady:**
+- `FROM` = tabela, z której chcemy **wszystkie** wiersze (tu: `Uczniowie`, żeby uczeń bez ocen się nie zgubił).
+- **Każdy kolejny JOIN też musi być `LEFT JOIN`**, inaczej zwykły `JOIN` z powrotem "wytnie" wiersz, który `LEFT JOIN` wcześniej zachował.
+- Jeśli nie ma dopasowania, brakujące kolumny (`nazwa`, `ocena`) dostają wartość `NULL`.
+
+### ⚠️ Największa pułapka: `NULL` vs `'NULL'`
+
+```sql
+ELSE NULL     -- ✅ prawdziwa pusta wartość
+ELSE 'NULL'   -- ❌ zwykły tekst "NULL" (4 litery), to NIE jest to samo!
+```
+
+Cudzysłów zamienia `NULL` w zwykły napis. Jeśli chcesz prawdziwą pustą wartość — piszesz `NULL` **bez** apostrofów.
+
+(Ciekawostka: jeśli `ELSE` i tak miałby zwrócić `NULL`, można go w ogóle pominąć — `CASE` bez pasującego `WHEN` domyślnie zwraca `NULL`.)
+
+---
+
+## Szybkie podsumowanie
+
+| Sytuacja | Narzędzie |
+|---|---|
+| Chcę dane z 3+ tabel | kilka `JOIN ... ON` po kolei |
+| Chcę znaleźć "kto/co NIE ma" pasującego rekordu | `NOT EXISTS` + podzapytanie skorelowane |
+| Chcę dodać kolumnę z kategorią zależną od wartości | `CASE WHEN ... THEN ... ELSE ... END` |
+| Chcę zachować wszystkie rekordy, nawet bez dopasowania | `LEFT JOIN` (każdy kolejny JOIN też LEFT) |
+| Brak dopasowania w LEFT JOIN = ? | `NULL` (bez cudzysłowu!) |
