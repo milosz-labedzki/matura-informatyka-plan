@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
 [![Excel](https://img.shields.io/badge/Excel-Advanced-217346.svg?logo=microsoft-excel&logoColor=white)]()
 [![SQL](https://img.shields.io/badge/SQL-Databases-4479A1.svg?logo=postgresql&logoColor=white)]()
-[![Status](https://img.shields.io/badge/Status-In%20Progress-brightgreen.svg)]()
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)]()
 [![Target](https://img.shields.io/badge/Target-80%2B%25-orange.svg)]()
 
 Oficjalne repozytorium dokumentujące proces przygotowań do **matury rozszerzonej z informatyki (CKE)**. Znajdziesz tutaj pełny, 30-dniowy harmonogram nauki w trybie **1 godzina dziennie** oraz rozwiązania zadań programistycznych, arkuszy kalkulacyjnych i zestawów teoretycznych.
